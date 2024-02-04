@@ -1,0 +1,349 @@
+/* Réinitialisation des styles de base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    scroll-behavior: smooth;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Définition des variables de couleur et de police */
+:root {
+    --salumeria-red: #850A0F;
+    --salumeria-red-alpha: rgba(133, 10, 15, 0.7);
+    --salumeria-green: #1C562C;
+    --salumeria-green-alpha: rgba(28, 86, 44, 0.7);
+    --salumeria-grey: #D8D1C3;
+    --salumeria-black: #161615;
+    --salumeria-white: #ffffff;
+    --salumeria-black-alpha: #000000ab;
+    --salumeria-title: 'Bodoni Moda', serif;
+    --salumeria-text: 'Italiana', sans-serif;
+}
+
+/* Styles pour l'en-tête */
+header {
+    background-color: var(--salumeria-white);
+    color: var(--salumeria-black);
+    filter: drop-shadow(0 0 5px var(--salumeria-black));
+    margin: auto;
+    text-align: center;
+    position: fixed;
+    z-index: 1;
+    width: 100vw;
+    height: 100px;
+}
+
+section,
+section>div {
+    scroll-margin-top: 100px;
+}
+
+/* Styles pour la barre de navigation */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px;
+    font-family: var(--salumeria-title);
+}
+
+/* Styles pour le logo */
+.logo img {
+    width: 250px;
+}
+
+/* Styles pour la liste du menu */
+.menu {
+    list-style: none;
+    display: flex;
+}
+
+/* Styles pour les éléments de la liste du menu */
+.menu li {
+    margin-right: 20px;
+    border-bottom: 2px solid transparent;
+    transition: border-bottom 0.3s ease;
+}
+
+/* Styles au survol des éléments de la liste du menu */
+.menu li:hover {
+    border-bottom: 1px solid var(--salumeria-red);
+}
+
+/* Styles pour les liens du menu */
+.menu a {
+    text-decoration: none;
+    color: var(--salumeria-black);
+}
+
+.menu a:hover {
+    color: var(--salumeria-green);
+}
+
+/* Styles pour l'icône du menu (burger) */
+.menuIcon {
+    display: none;
+    cursor: pointer;
+}
+
+/* Styles pour la case à cocher du menu */
+#menuToggle {
+    display: none;
+}
+
+.fa-bag-shopping {
+    color: var(--salumeria-red);
+    font-size: 24px;
+    transition: 0.5s;
+}
+
+.fa-bag-shopping:hover {
+    color: var(--salumeria-green);
+    cursor: pointer;
+}
+
+.headerBanner {
+    background-image: url('../img/devanture_boutique.jpg');
+    background-size: cover;
+    /* Ajuste la taille de l'image pour couvrir complètement le conteneur */
+    background-position: center;
+    /* Centre l'image dans le conteneur */
+    color: var(--salumeria-grey);
+    /* Couleur du texte sur l'image */
+    padding: 80px 0;
+}
+
+.headerBanner h1 {
+    font-family: var(--salumeria-text);
+    background-color: var(--salumeria-green-alpha);
+    margin-bottom: 20px;
+    /* Ajoute un espace entre le titre et le bord inférieur du conteneur */
+    padding: 20px;
+    width: 60%;
+    height: 100px;
+}
+
+footer {
+    font-family: var(--salumeria-text);
+    padding: 10px;
+    height: 100px;
+    background-color: var(--salumeria-white);
+    display: flex;
+    justify-content: space-between;
+    /* Pour espacer les deux divs horizontalement */
+    align-items: center;
+    /* Pour centrer verticalement les éléments dans chaque div */
+}
+
+.social {
+    display: flex;
+    color: var(--salumeria-red);
+}
+
+.fa-brands {
+    margin-right: 10px;
+    /* Ajoutez une marge entre les deux icônes */
+}
+
+.info {
+    text-align: right;
+    /* Aligner le texte à droite dans la deuxième div */
+}
+
+/** Sections **/
+.sectionBlock {
+    padding: 5px 25px 50px 25px;
+}
+
+.sectionBlock:nth-child(even) {
+    background-color: var(--salumeria-green);
+}
+
+/** Sous-titre **/
+.subTitle {
+    color: var(--salumeria-black);
+    font-size: 45px;
+    font-style: italic;
+    margin: 10px 0;
+}
+
+.sectionBlock:nth-child(even)>.subTitle {
+    color: var(--salumeria-grey);
+}
+
+/** Liste des produits **/
+.productsList {
+    display: grid;
+    gap: 15px;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+/** Produit **/
+.product {
+    background-color: var(--salumeria-white);
+    border: 1px solid var(--salumeria-black);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 15px;
+}
+
+/* Image */
+.productImage {
+    height: 250px;
+    object-fit: cover;
+    width: 100%;
+}
+
+/* Informations */
+.productInformations {
+    display: flex;
+    font-family: var(--salumeria-title);
+    font-size: 20px;
+    justify-content: space-between;
+}
+
+/* Description */
+.productDescription {
+    font-family: var(--salumeria-text);
+    font-size: 18px;
+}
+
+/* Button */
+.productButton {
+    font-family: var(--salumeria-text);
+    background-color: var(--salumeria-green);
+    border: 1px solid var(--salumeria-green);
+    border-radius: 5px;
+    color: var(--salumeria-grey);
+    display: flex;
+    font-size: 16px;
+    margin: auto;
+    padding: 10px 20px;
+    transition: 0.5s;
+}
+
+.productButton:hover {
+    background-color: transparent;
+    color: var(--salumeria-green);
+    cursor: pointer;
+}
+
+/* Styles pour le menu en version mobile */
+@media screen and (max-width: 768px) {
+
+    /* Styles pour la liste du menu en version mobile */
+    .menu {
+        display: none;
+        flex-direction: column;
+        text-align: center;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        right: 0;
+        background-color: var(--salumeria-white);
+    }
+
+    /* Styles pour afficher le menu en version mobile */
+    .menu.show {
+        display: flex;
+        flex-direction: column;
+    }
+
+    /* Styles pour les éléments de la liste du menu en version mobile */
+    .menu li {
+        margin-right: 0;
+        border-bottom: 2px solid transparent;
+        transition: border-bottom 0.3s ease;
+    }
+
+    /* Styles au survol des éléments de la liste du menu en version mobile */
+    .menu.show li:hover {
+        border-bottom: 2px solid var(--salumeria-red);
+    }
+
+    /* Styles pour les liens du menu en version mobile */
+    .menu.show a {
+        color: var(--salumeria-black);
+    }
+
+    /* Styles pour afficher l'icône du menu (burger) en version mobile */
+    .menuIcon {
+        display: block;
+        cursor: pointer;
+    }
+
+    /* Masque la checkbox en version mobile */
+    #menuToggle {
+        display: none;
+    }
+
+    .fa-bag-shopping {
+        color: var(--salumeria-red);
+    }
+}
+
+/** Liste des produits **/
+/** Responsive **/
+@media screen and (max-width: 1400px) {
+    .productsList {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media screen and (max-width: 1200px) {
+
+    /** Liste des produits **/
+    .productsList {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /** Produit **/
+    .productImage {
+        height: 200px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+
+    /** Liste des produits **/
+    .productsList {
+        grid-template-columns: 1fr;
+    }
+
+    /** Produit **/
+    /* Image */
+    .productImage {
+        height: 150px;
+    }
+
+    /* Informations */
+    .productInformations {
+        font-size: 15px;
+    }
+
+    /* Description */
+    .productDescription {
+        font-size: 18px;
+    }
+
+    footer {
+        padding: 20px;
+        background-color: var(--salumeria-white);
+        display: flex;
+        justify-content: space-between;
+        /* Pour espacer les deux divs horizontalement */
+        align-items: center;
+        /* Pour centrer verticalement les éléments dans chaque div */
+    }
+}
